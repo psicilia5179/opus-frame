@@ -1,5 +1,5 @@
 {
-  "skill_name": "verify",
+  "skill_name": "opus-verify",
   "evals": [
     {"id": 1, "prompt": "the agent just finished the payments migration and wrote REPORT.md. verify it before I close the ticket", "expected_output": "Flags 3 wrong claims (refunds still on LegacyClient, legacy_client.py exists, 5 tests with 1 failing), confirms retries and idempotency key, marks the 'no files outside' claim unconfirmed. No files changed.", "files": ["fixture/"]},
     {"id": 2, "prompt": "Codex reviewed webhooks.py, its findings are in REVIEW.md. Check which of them are actually real before I start fixing things.", "expected_output": "Findings 1 (==) and 4 (MD5) are wrong; 2 (no dedupe) and 3 (KeyError) are confirmed with file:line evidence. No files changed.", "files": ["fixture/"]},

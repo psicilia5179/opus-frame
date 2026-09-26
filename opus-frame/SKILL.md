@@ -1,9 +1,9 @@
 ---
-name: frame
-description: Turns a rough prompt into a well-framed brief for Opus 5.5 (or a second-model reviewer like Codex) with a finish line, a don't list, up-front permissions, stop rules, a verification step and a suggested effort level. Shows the brief for the user to run and never runs it. Use this whenever the user types /frame, or asks to frame, tighten, rewrite, or "make a proper prompt/brief/spec" out of a rough task before a long agent run, a migration, an audit, a code review, a UI/design task or a doc, even if they don't say "brief". Also use it when they want a review prompt they can paste into Codex or another model.
+name: opus-frame
+description: Turns a rough prompt into a well-framed brief for Opus 5.5 (or a second-model reviewer like Codex) with a finish line, a don't list, up-front permissions, stop rules, a verification step and a suggested effort level. Shows the brief for the user to run and never runs it. Use this whenever the user types /opus-frame, or asks to frame, tighten, rewrite, or "make a proper prompt/brief/spec" out of a rough task before a long agent run, a migration, an audit, a code review, a UI/design task or a doc, even if they don't say "brief". Also use it when they want a review prompt they can paste into Codex or another model.
 ---
 
-# /frame
+# /opus-frame
 
 Opus 5.5 does its best work when it gets a complete task with a clear finish line and is left to run. Most bad runs trace back to the prompt, not the model:
 
@@ -19,7 +19,7 @@ Your job is to turn the user's rough prompt into a brief that closes those gaps.
 
 ## Input
 
-`/frame [mode] <rough prompt>`, where mode is one of `build`, `audit`, `review`, `design` or `doc`.
+`/opus-frame [mode] <rough prompt>`, where mode is one of `build`, `audit`, `review`, `design` or `doc`.
 
 If the mode is missing, infer it from the prompt:
 
@@ -132,7 +132,7 @@ Nothing else. No preamble, and no offer to run it. The user will run it when the
 
 ## Example
 
-Rough prompt: `/frame move payments to the new client`
+Rough prompt: `/opus-frame move payments to the new client`
 
 ```
 MODE:        build (inferred)

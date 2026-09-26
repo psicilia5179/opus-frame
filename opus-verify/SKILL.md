@@ -1,15 +1,15 @@
 ---
-name: verify
-description: Checks each claim or change in a piece of work against evidence (run the tests, grep the code, read file:line) and reports every claim as confirmed, wrong or unconfirmed. Use it whenever the user types /verify, or asks to double-check, fact-check, sanity-check or "make sure that's actually true" about a report, a summary of a long agent run, a migration status, a code review (including findings from Codex or another model), a README or doc, or Claude's own last answer, even if they don't say "verify". Report-only: it never fixes what it finds.
+name: opus-verify
+description: Checks each claim or change in a piece of work against evidence (run the tests, grep the code, read file:line) and reports every claim as confirmed, wrong or unconfirmed. Use it whenever the user types /opus-verify, or asks to double-check, fact-check, sanity-check or "make sure that's actually true" about a report, a summary of a long agent run, a migration status, a code review (including findings from Codex or another model), a README or doc, or Claude's own last answer, even if they don't say "verify". Report-only: it never fixes what it finds.
 ---
 
-# /verify
+# /opus-verify
 
-Opus 5.5's findings hold up well when it checks claims against evidence. The failure it's prone to is a plausible guess that was never checked: "all tests pass" when nobody ran them, "the old client is gone" when one file still imports it, a review finding about a line that actually handles the case. `/verify` is a second pass that separates what's been shown from what's only been said.
+Opus 5.5's findings hold up well when it checks claims against evidence. The failure it's prone to is a plausible guess that was never checked: "all tests pass" when nobody ran them, "the old client is gone" when one file still imports it, a review finding about a line that actually handles the case. `/opus-verify` is a second pass that separates what's been shown from what's only been said.
 
 ## Input
 
-`/verify [target]`
+`/opus-verify [target]`
 
 - **No target:** the claims in the most recent substantive answer or run summary in this conversation.
 - **A file:** a report, a TASKS.md, a findings list, a README or doc. Verify it against the code or data it describes.

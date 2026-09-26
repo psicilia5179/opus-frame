@@ -1,5 +1,5 @@
 {
-  "skill_name": "frame",
+  "skill_name": "opus-frame",
   "evals": [
     {"id": 1, "prompt": "Turn this rough prompt into a well-framed brief I can hand to Opus 5.5: \"go thru all our express api routes (src/routes, like 40 files) and figure out which ones are missing auth checks, be thorough\"", "expected_output": "An audit-mode brief with full coverage, a don't-change-code rule, a finding shape with evidence, delegation, xhigh effort; shown, not run.", "files": []},
     {"id": 2, "prompt": "Turn this rough prompt into a well-framed brief: \"review my feature/stripe-webhooks branch before I merge it into main. I want codex to review it too so make it work there\"", "expected_output": "A tool-neutral review brief with merge-blocking-only findings with evidence, no Claude-specific fields, and a note that it works in Codex.", "files": []},

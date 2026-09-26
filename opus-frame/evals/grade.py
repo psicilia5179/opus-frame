@@ -1,4 +1,4 @@
-"""Grade /frame outputs: python frame/evals/grade.py <iteration-dir>"""
+"""Grade /opus-frame outputs: python opus-frame/evals/grade.py <iteration-dir>"""
 import json, re, sys, pathlib
 
 def brief_of(text):
