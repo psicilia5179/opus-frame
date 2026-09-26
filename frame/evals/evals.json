@@ -1,0 +1,8 @@
+{
+  "skill_name": "frame",
+  "evals": [
+    {"id": 1, "prompt": "Turn this rough prompt into a well-framed brief I can hand to Opus 5.5: \"go thru all our express api routes (src/routes, like 40 files) and figure out which ones are missing auth checks, be thorough\"", "expected_output": "An audit-mode brief with full coverage, a don't-change-code rule, a finding shape with evidence, delegation, xhigh effort; shown, not run.", "files": []},
+    {"id": 2, "prompt": "Turn this rough prompt into a well-framed brief: \"review my feature/stripe-webhooks branch before I merge it into main. I want codex to review it too so make it work there\"", "expected_output": "A tool-neutral review brief with merge-blocking-only findings with evidence, no Claude-specific fields, and a note that it works in Codex.", "files": []},
+    {"id": 3, "prompt": "Turn this rough prompt into a well-framed brief for Opus 5.5: \"redo the landing page for my pottery studio site so it looks nicer and more modern. think step by step and be careful. the current one has a big hero photo, a class schedule and a contact form\"", "expected_output": "A design brief with direction, an avoid list of default styles, a request for screenshots, visual done checks, and filler stripped.", "files": []}
+  ]
+}
