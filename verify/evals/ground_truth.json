@@ -1,0 +1,5 @@
+{
+  "report": {"wrong": ["every endpoint uses NewClient (refunds.py uses LegacyClient)", "legacy_client.py deleted (still exists)", "all 6 tests pass (5 tests, 1 fails)"], "confirmed": ["retries up to 3 times on 5xx", "charges send Idempotency-Key"], "unconfirmed": ["no files outside payments/ and tests/ changed (no git history)"]},
+  "review": {"wrong": ["#1 uses == (it uses hmac.compare_digest)", "#4 uses MD5 (it uses sha256)"], "confirmed": ["#2 no dedupe on event id", "#3 unknown type raises KeyError"]},
+  "readme": {"wrong": ["requires Python 3.12 (pyproject says >=3.10)", "--currency defaults to usd (it's eur)"], "confirmed": ["version 0.4.0", "--dry-run exists", "retries up to 3 times on 5xx"], "note": "'--dry-run parses without sending' is only partly checkable: the flag exists but nothing uses it"}
+}
