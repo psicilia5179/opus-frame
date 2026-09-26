@@ -15,9 +15,10 @@ Based on Anthropic's [Getting the most out of Opus 5.5](https://claude.dev/blog/
   - Every claim is marked wrong, unconfirmed, or confirmed, with `file:line` or command output; read-only, never fixes
   - Test fixture with planted claims and ground truth lives in `opus-verify/evals/`
 
+- A standing CLAUDE.md block (`claude-md/opus-block.md`) for `~/.claude/CLAUDE.md`: keep going, treat answers as done, TASKS.md on long runs
+
 ## Planned
 
-- A standing global CLAUDE.md block in `~/.claude/CLAUDE.md` (keep going, treat answers as done, TASKS.md on long runs)
 - Maybe later: `/debrief`
 
 ## Tips
@@ -25,4 +26,6 @@ Based on Anthropic's [Getting the most out of Opus 5.5](https://claude.dev/blog/
 - Opus 5.5 defaults to medium effort. Raise it for long runs, e.g. `claude --effort high`.
 - Flagged messages can move to an older model mid-run. After a long run, check `/model`, or turn off automatic switching in settings.
 
-Source lives in `opus-frame/` and `opus-verify/`; install with `ln -s "$PWD/opus-frame" ~/.claude/skills/opus-frame` and `ln -s "$PWD/opus-verify" ~/.claude/skills/opus-verify`.
+## Install
+
+Run `./install.sh`. It links both skills into `~/.claude/skills/` and adds the CLAUDE.md block to `~/.claude/CLAUDE.md` (backing the file up first). Rerun it after editing the block; it replaces the block between its markers instead of adding another copy.
