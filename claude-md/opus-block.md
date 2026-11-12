@@ -1,4 +1,4 @@
-<!-- opus-skills:start (source: ~/apps/opusPromptSkill/claude-md/opus-block.md) -->
+<!-- opus-skills:start (source: github.com/psicilia5179/opus-frame) -->
 # Working style
 
 - When a step doesn't need my input, keep going. Put status notes in the same message as your next action. Stop and ask only when you can't continue without me, or before anything destructive.
