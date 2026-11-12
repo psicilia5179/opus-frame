@@ -15,10 +15,32 @@ skills="$HOME/.claude/skills"
 claude_md="$HOME/.claude/CLAUDE.md"
 block="$repo/claude-md/opus-block.md"
 
+# Link each skill so `git pull` updates it. Where symlinks aren't available (Git Bash on
+# Windows without Developer Mode copies instead of linking), fall back to a real copy.
+install_skill() {
+  local src="$repo/$1" dst="$skills/$1"
+  if [ -L "$dst" ]; then
+    rm "$dst"
+  elif [ -e "$dst" ]; then
+    # Only replace an earlier copy of this same skill, never someone else's folder.
+    if ! grep -qx "name: $1" "$dst/SKILL.md" 2>/dev/null; then
+      echo "refusing to replace $dst: it isn't an earlier copy of $1" >&2
+      exit 1
+    fi
+    rm -rf "$dst"
+  fi
+  if ln -s "$src" "$dst" 2>/dev/null && [ -L "$dst" ]; then
+    echo "linked $dst"
+  else
+    rm -rf "$dst"
+    cp -R "$src" "$dst"
+    echo "copied $dst (symlinks unavailable here: rerun this script after git pull)"
+  fi
+}
+
 mkdir -p "$skills"
 for s in opus-frame opus-verify; do
-  ln -sfn "$repo/$s" "$skills/$s"
-  echo "linked $skills/$s"
+  install_skill "$s"
 done
 
 [ "$with_block" = 1 ] || exit 0

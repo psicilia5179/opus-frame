@@ -70,7 +70,7 @@ cd opus-frame
 ./install.sh --claude-md   # same, and adds the CLAUDE.md block (backs the file up first)
 ```
 
-The skills are linked, not copied, so `git pull` updates them. Rerunning `--claude-md` replaces the block between its markers instead of adding a second copy.
+The skills are linked, so `git pull` updates them. Where symlinks aren't available (Git Bash on Windows without Developer Mode), the installer copies them instead and says so; rerun it after `git pull`. Rerunning `--claude-md` replaces the block between its markers instead of adding a second copy.
 
 ## Evals
 
